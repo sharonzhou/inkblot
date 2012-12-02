@@ -1,49 +1,6 @@
 <!DOCTYPE html>
 <html>
-
-<form name="loginform" action="login.php" method="post">
-    <fieldset>
-        </br>
-        </br>
-        <div class="sub">
-            <span class="message">
-                Welcome to Inkblot!
-                </br>1. Sign Up
-                </br>2. Receive emails, and simply reply to them
-                </br>3. Your replies will automatically save to your ever-growing journal
-                </br>4. Revisit past entries and decorate & personalize them when you sign in
-                </br></br>That's it! Enter your email address and start your journal now
-            </span>
-        </div>
-        </br> 
-        <div class="control-group">
-            <input name="email" placeholder="Email Address" type="text" class="email"/> 
-            <a href="signup" class="signup" style="padding-left:5px">Go</a>
-        </div>                
-    </fieldset>
-</form>
-
-<div id="container">
-<div id="topnav" class="topnav"> Already have an account? <a href="login" class="signin"><span>Sign in</span></a> </div>
-<fieldset id="signin_menu" style=display:none>
-    <form method="post" id="signin" action="localhost/">
-    </br>
-    <label for="email">Email</label>
-    <input id="email" name="email" value="" title="email" tabindex="4" type="text">
-    </p>
-    <p>
-    <label for="password">Password</label>
-    <input id="password" name="password" value="" title="password" tabindex="5" type="password">
-    </p>
-    <p class="remember">
-    <input id="signin_submit" value="Sign in" tabindex="6" type="submit">
-    </br></br>
-    <input id="remember" name="remember_me" value="1" tabindex="7" type="checkbox">  Remember me</input>
-    </p>
-    <p class="forgot"> <a href="#" id="resend_password_link">Forgot your password?</a> </p>
-    </form>
-</fieldset>
-</div>
+<head>
 
 <script src="javascripts/jquery.js" type="text/javascript"></script>
 <script type="text/javascript">
@@ -51,7 +8,8 @@
     $(".signin").click(function(e) {
         e.preventDefault();
         $("fieldset#signin_menu").toggle();
-        $(".signin").toggleClass("menu-open");
+        $(".signin").toggleClass("menu-open"); 
+        $("fieldset#signin_menu").fadeIn();   
         });
     $("fieldset#signin_menu").mouseup(function() {
         return false
@@ -64,6 +22,55 @@
     });
     });
 </script>
+</head>
+
+<body>
+<form name="loginform" action="login.php" method="post">
+    <fieldset>
+        </br>
+        </br>
+        <div class="sub">
+            <span class="message">
+                Welcome to Inkblot!
+                </br></br>1. Sign Up
+                </br>2. Receive emails, and simply reply to them
+                </br>3. Your replies will automatically save to your ever-growing journal
+                </br>4. Revisit past entries and decorate & personalize them when you sign in
+                </br></br>That's it! Enter your email address and start your journal now
+            </span>
+        </div>
+        </br> 
+        <div class="control-group">
+            <input name="email" placeholder="Email Address" type="text" class="email"/> 
+            <a href="signup" class="signup" style="padding-left:5px">go!</a>
+        </div>                
+    </fieldset>
+</form>
+
+<div id="container" style="position: absolute; top: 80px; right: 40px; width: 300px; height: 300px">
+<div id="topnav" class="topnav"><a href="login" class="signin"><span>sign in</span></a> </div>
+<fieldset id="signin_menu" style=display:none>
+    <form method="post" id="signin" action="localhost/">
+    </br>
+    <label for="email">email</label>
+    <input id="email" name="email" value="" title="email" tabindex="4" type="text">
+    </p>
+    <p>
+    <label for="password">password</label>     
+    <input id="password" name="password" value="" title="password" tabindex="5" type="password">
+    </br><a class="forgot" href="#" id="resend_password_link" style="padding-left:175px" style= "font-size: x-small">forgot?</a>
+    </p>
+    <p class="remember">
+    <input id="remember" name="remember_me" value="1" tabindex="7" type="checkbox">  remember me</input>
+    </br></br>
+    <input id="signin_submit" value="Go" tabindex="6" type="submit">
+    </p>
+    
+    </form>
+</fieldset>
+</div>
+
+</body>
 
 <!--
 
